@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ConterDown</title>
+    <style>
+h1{
+    margin-left: 300px;
+    margin-top: 200px;
+    color: aquamarine;
+    background-color: rgb(179, 120, 45);
+    text-align: center;
+    font-size:xx-large;
+    width:600px;
+    height:10vh;
+    padding:100px;
+}
+
+
+    </style>
+</head>
+
+<body>
+
+<h1 id="Time"></h1>
+
+</body>
+
+<script>
+
+    
+var future = new Date("Nov 15, 2021 15:37:25").getTime();
+var now = new Date();
+var diff=future-now;
+var days = Math.floor(diff / (1000*24*60*60));
+var hour = Math.floor(diff / (1000*60*60));
+var min = Math.floor(diff/(1000*60))
+var sec = Math.floor(diff/1000)
+document.getElementById('Time').innerText = days + " days " +(hour-days*24)+ " hours "+(min-hour*60)+ " minutes "+( sec-min*60)+ " seconds ";
+    window.setInterval('refresh()',1000);
+
+function refresh(){
+    window.location.reload();
+}
+
+</script>
+
+
+
+</html>
